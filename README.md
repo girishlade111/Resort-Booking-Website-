@@ -1,69 +1,61 @@
-# Welcome to your Lovable project
+# Dandeli Adventure Resorts — Resort Booking Website
 
-## Project info
+A full-featured resort booking website for **Dandeli Adventure Resorts** — browse rooms, explore activities, check availability, and walk through a complete client-side booking flow (search → room selection → guest details → payment form → OTP step → confirmation). Built with **Vite + React 18 + TypeScript**, styled with **Tailwind CSS** and **shadcn/ui**, animated with **Framer Motion**.
 
-**URL**: https://lovable.dev/projects/15d22a8d-159c-4e5f-955c-69d700cd8ccd
+This is a static, client-side demo site: the booking/payment steps are a realistic UI flow with no real backend — no charges are made.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- **Multi-page experience** — Home, Accommodation, Activities, Gallery, About, Contact, Booking, Booking Success, 404
+- **Room discovery** — room cards, search/filter form, featured listings
+- **End-to-end booking flow** — date + guest selection, personal info, mock payment form, OTP input, booking confirmation
+- **Activities & attractions** — activity cards, featured activities, nearby-attractions section
+- **Engagement widgets** — chatbot, WhatsApp button, ad popup, promo/discount banners, special offers
+- **Polish** — dark/light theme support, scroll-to-top, tilt cards, toasts, fully responsive layout
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/15d22a8d-159c-4e5f-955c-69d700cd8ccd) and start prompting.
+## Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Build:** Vite 6, TypeScript
+- **UI:** React 18, react-router-dom, Tailwind CSS, shadcn/ui (Radix primitives), Framer Motion, lucide-react
+- **Forms:** react-hook-form, zod validation
+- **Dates:** date-fns, react-day-picker
 
-**Use your preferred IDE**
+## Quick Start
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```bash
+npm install --legacy-peer-deps
+npm run dev        # http://localhost:5173
 ```
 
-**Edit a file directly in GitHub**
+## Project Structure
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+src/
+├── pages/            # Index, Accommodation, Activities, Booking, BookingSuccess, Gallery, About, Contact, NotFound
+├── components/       # Navbar, Hero, RoomCard, SearchForm, BookingForm, PaymentForm, OtpInput, ChatBot, ...
+│   └── ui/           # shadcn/ui primitives
+├── hooks/            # theme, mobile, toast
+└── lib/              # utils
+public/               # static assets, favicon, og-image
+```
 
-**Use GitHub Codespaces**
+## Build & Deploy
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```bash
+npm run build        # outputs to dist/
+```
 
-## What technologies are used for this project?
+Static output — deploy anywhere static files are served:
 
-This project is built with .
+- **Cloudflare Pages:** `cloudflare pages_deploy resort-booking-website- dist`
+- **GitHub Pages / Netlify / Vercel:** point at `dist/` (SPA — add a `/* /index.html 200` redirect rule)
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Environment Variables
 
-## How can I deploy this project?
+None — the site is fully client-side and needs no API keys or backend.
 
-Simply open [Lovable](https://lovable.dev/projects/15d22a8d-159c-4e5f-955c-69d700cd8ccd) and click on Share -> Publish.
+---
 
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+Built by **Girish Lade** — [ladestack.in](https://ladestack.in)
